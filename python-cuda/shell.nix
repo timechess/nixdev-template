@@ -9,5 +9,8 @@ pkgs.mkShell rec {
 
   shellHook = ''
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/run/opengl-driver/lib
+    export CUDA_PATH=${pkgs.cudatoolkit}
+    export EXTRA_LDFLAGS="-L/lib -L${pkgs.linuxPackages.nvidia_x11}/lib"
+    export EXTRA_CCFLAGS="-I/usr/include"
   '';
 }
