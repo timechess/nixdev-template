@@ -1,11 +1,11 @@
 { pkgs, system, }:
 pkgs.mkShell {
 
-  buildInputs = [
-    pkgs.pkgsCross.mingwW64.buildPackages.gcc
-    pkgs.pkgsCross.mingwW64.stdenv.cc
-    pkgs.pkgsCross.mingwW64.windows.mingw_w64_pthreads
-  ];
+  # buildInputs = [
+  #   pkgs.pkgsCross.mingwW64.buildPackages.gcc
+  #   pkgs.pkgsCross.mingwW64.stdenv.cc
+  #   pkgs.pkgsCross.mingwW64.windows.mingw_w64_pthreads
+  # ];
 
   packages = with pkgs; [
     alejandra
@@ -16,7 +16,6 @@ pkgs.mkShell {
     })
     cargo-edit
     cargo-hakari
-
   ];
 
 }
